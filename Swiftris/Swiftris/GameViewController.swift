@@ -16,14 +16,29 @@ import SpriteKit
     var scene: GameScene!
     var swiftris:Swiftris!
     
+    
     var panPointReference:CGPoint?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //config the view
-        let skView = view as! SKView
+        let skView = self.view as! SKView
         skView.multipleTouchEnabled = false
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("didTap:"))
+        
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("didPan:"))
+        
+        self.view.addGestureRecognizer(panGestureRecognizer)
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("didSwipe:"))
+        swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
+        
+        
         
         //create/config the scene
         scene = GameScene(size: skView.bounds.size)
@@ -46,11 +61,11 @@ import SpriteKit
         }
     }
     
-    @IBAction func didTap(sender: UITapGestureRecognizer) {
+    func didTap(sender: UITapGestureRecognizer) {
             swiftris.rotateShape()
     }
     
-    @IBAction func didPan(sender: UIPanGestureRecognizer) {
+    func didPan(sender: UIPanGestureRecognizer) {
         let currentPoint = sender.translationInView(self.view)
         if let originalPoint = panPointReference {
             // #3
@@ -69,7 +84,7 @@ import SpriteKit
         }
     }
     
-    @IBAction func didSwipe(sender: UISwipeGestureRecognizer) {
+    func didSwipe(sender: UISwipeGestureRecognizer) {
             swiftris.dropShape()
     }
     

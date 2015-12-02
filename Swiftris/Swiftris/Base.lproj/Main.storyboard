@@ -77,24 +77,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="RrS-3U-tmq">
-                    <connections>
-                        <action selector="didTap:" destination="BV1-FR-VrT" id="jRq-5p-c5M"/>
-                        <outlet property="delegate" destination="BV1-FR-VrT" id="m7v-69-ZdI"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Lns-Vw-Neb">
-                    <connections>
-                        <action selector="didPan:" destination="BV1-FR-VrT" id="CdG-vb-Fve"/>
-                        <outlet property="delegate" destination="BV1-FR-VrT" id="nNd-QJ-DQb"/>
-                    </connections>
-                </panGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="Ouc-et-dSW">
-                    <connections>
-                        <action selector="didSwipe:" destination="BV1-FR-VrT" id="Ii5-F5-w1F"/>
-                        <outlet property="delegate" destination="BV1-FR-VrT" id="dBv-WA-myZ"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
         </scene>
     </scenes>
