@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D004BB3E1C03C46100EB5705 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB3D1C03C46100EB5705 /* Shape.swift */; };
+		D004BB401C03C6B500EB5705 /* SquareShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB3F1C03C6B500EB5705 /* SquareShape.swift */; };
+		D004BB421C03C71E00EB5705 /* TShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB411C03C71E00EB5705 /* TShape.swift */; };
+		D004BB441C03C74500EB5705 /* LineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB431C03C74500EB5705 /* LineShape.swift */; };
+		D004BB461C03C77000EB5705 /* LShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB451C03C77000EB5705 /* LShape.swift */; };
+		D004BB481C03C7B500EB5705 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB471C03C7B500EB5705 /* JShape.swift */; };
+		D004BB4A1C03C7D300EB5705 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB491C03C7D300EB5705 /* SShape.swift */; };
+		D004BB4C1C03C7FC00EB5705 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB4B1C03C7FC00EB5705 /* ZShape.swift */; };
+		D004BB4E1C03CD3400EB5705 /* Swiftris.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004BB4D1C03CD3400EB5705 /* Swiftris.swift */; };
+		D04A992E1BFEB2CB00E11A7D /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A992D1BFEB2CB00E11A7D /* Block.swift */; };
+		D086BFE11BFC5D950054E95E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D086BFDB1BFC5D950054E95E /* background.png */; };
+		D086BFE21BFC5D950054E95E /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D086BFDC1BFC5D950054E95E /* background@2x.png */; };
+		D086BFE31BFC5D950054E95E /* gameboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D086BFDD1BFC5D950054E95E /* gameboard.png */; };
+		D086BFE41BFC5D950054E95E /* gameboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D086BFDE1BFC5D950054E95E /* gameboard@2x.png */; };
+		D086BFE51BFC5D950054E95E /* whitebg.png in Resources */ = {isa = PBXBuildFile; fileRef = D086BFDF1BFC5D950054E95E /* whitebg.png */; };
+		D086BFE61BFC5D950054E95E /* whitebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D086BFE01BFC5D950054E95E /* whitebg@2x.png */; };
+		D086BFE81BFC5DA70054E95E /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D086BFE71BFC5DA70054E95E /* Sprites.atlas */; };
+		D086BFEA1BFC63040054E95E /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086BFE91BFC63040054E95E /* Array2D.swift */; };
+		D0FE84F21BFB305300BF5CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE84F11BFB305300BF5CA8 /* AppDelegate.swift */; };
+		D0FE84F61BFB305300BF5CA8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE84F51BFB305300BF5CA8 /* GameScene.swift */; };
+		D0FE84F81BFB305300BF5CA8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE84F71BFB305300BF5CA8 /* GameViewController.swift */; };
+		D0FE84FB1BFB305300BF5CA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FE84F91BFB305300BF5CA8 /* Main.storyboard */; };
+		D0FE84FD1BFB305300BF5CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FE84FC1BFB305300BF5CA8 /* Assets.xcassets */; };
+		D0FE85001BFB305300BF5CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FE84FE1BFB305300BF5CA8 /* LaunchScreen.storyboard */; };
+		D0FE850B1BFB305300BF5CA8 /* SwiftrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE850A1BFB305300BF5CA8 /* SwiftrisTests.swift */; };
+		D0FE85161BFB305300BF5CA8 /* SwiftrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE85151BFB305300BF5CA8 /* SwiftrisUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0FE85071BFB305300BF5CA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0FE84E61BFB305200BF5CA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0FE84ED1BFB305200BF5CA8;
+			remoteInfo = Swiftris;
+		};
+		D0FE85121BFB305300BF5CA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0FE84E61BFB305200BF5CA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0FE84ED1BFB305200BF5CA8;
+			remoteInfo = Swiftris;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D004BB3D1C03C46100EB5705 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		D004BB3F1C03C6B500EB5705 /* SquareShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareShape.swift; sourceTree = "<group>"; };
+		D004BB411C03C71E00EB5705 /* TShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TShape.swift; sourceTree = "<group>"; };
+		D004BB431C03C74500EB5705 /* LineShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
+		D004BB451C03C77000EB5705 /* LShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LShape.swift; sourceTree = "<group>"; };
+		D004BB471C03C7B500EB5705 /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
+		D004BB491C03C7D300EB5705 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
+		D004BB4B1C03C7FC00EB5705 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		D004BB4D1C03CD3400EB5705 /* Swiftris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftris.swift; sourceTree = "<group>"; };
+		D04A992D1BFEB2CB00E11A7D /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		D086BFDB1BFC5D950054E95E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../Images/background.png; sourceTree = "<group>"; };
+		D086BFDC1BFC5D950054E95E /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "../Images/background@2x.png"; sourceTree = "<group>"; };
+		D086BFDD1BFC5D950054E95E /* gameboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameboard.png; path = ../Images/gameboard.png; sourceTree = "<group>"; };
+		D086BFDE1BFC5D950054E95E /* gameboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gameboard@2x.png"; path = "../Images/gameboard@2x.png"; sourceTree = "<group>"; };
+		D086BFDF1BFC5D950054E95E /* whitebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whitebg.png; path = ../Images/whitebg.png; sourceTree = "<group>"; };
+		D086BFE01BFC5D950054E95E /* whitebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "whitebg@2x.png"; path = "../Images/whitebg@2x.png"; sourceTree = "<group>"; };
+		D086BFE71BFC5DA70054E95E /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Sprites.atlas; path = Images/Sprites.atlas; sourceTree = "<group>"; };
+		D086BFE91BFC63040054E95E /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		D0FE84EE1BFB305300BF5CA8 /* Swiftris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FE84F11BFB305300BF5CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0FE84F51BFB305300BF5CA8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D0FE84F71BFB305300BF5CA8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D0FE84FA1BFB305300BF5CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0FE84FC1BFB305300BF5CA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0FE84FF1BFB305300BF5CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0FE85011BFB305300BF5CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		D0FE85061BFB305300BF5CA8 /* SwiftrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FE850A1BFB305300BF5CA8 /* SwiftrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftrisTests.swift; sourceTree = "<group>"; };
+		D0FE850C1BFB305300BF5CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FE85111BFB305300BF5CA8 /* SwiftrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FE85151BFB305300BF5CA8 /* SwiftrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftrisUITests.swift; sourceTree = "<group>"; };
+		D0FE85171BFB305300BF5CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0FE84EB1BFB305200BF5CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FE85031BFB305300BF5CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FE850E1BFB305300BF5CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D086BFD91BFC59730054E95E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D086BFE01BFC5D950054E95E /* whitebg@2x.png */,
+				D086BFDD1BFC5D950054E95E /* gameboard.png */,
+				D086BFDF1BFC5D950054E95E /* whitebg.png */,
+				D086BFDE1BFC5D950054E95E /* gameboard@2x.png */,
+				D086BFDC1BFC5D950054E95E /* background@2x.png */,
+				D086BFDB1BFC5D950054E95E /* background.png */,
+				D0FE85011BFB305300BF5CA8 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0FE84E51BFB305200BF5CA8 = {
+			isa = PBXGroup;
+			children = (
+				D0FE84F01BFB305300BF5CA8 /* Swiftris */,
+				D0FE85091BFB305300BF5CA8 /* SwiftrisTests */,
+				D0FE85141BFB305300BF5CA8 /* SwiftrisUITests */,
+				D0FE84EF1BFB305300BF5CA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0FE84EF1BFB305300BF5CA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0FE84EE1BFB305300BF5CA8 /* Swiftris.app */,
+				D0FE85061BFB305300BF5CA8 /* SwiftrisTests.xctest */,
+				D0FE85111BFB305300BF5CA8 /* SwiftrisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0FE84F01BFB305300BF5CA8 /* Swiftris */ = {
+			isa = PBXGroup;
+			children = (
+				D0FE84F11BFB305300BF5CA8 /* AppDelegate.swift */,
+				D0FE84F51BFB305300BF5CA8 /* GameScene.swift */,
+				D004BB4D1C03CD3400EB5705 /* Swiftris.swift */,
+				D04A992D1BFEB2CB00E11A7D /* Block.swift */,
+				D0FE84F71BFB305300BF5CA8 /* GameViewController.swift */,
+				D086BFE91BFC63040054E95E /* Array2D.swift */,
+				D004BB3D1C03C46100EB5705 /* Shape.swift */,
+				D004BB3F1C03C6B500EB5705 /* SquareShape.swift */,
+				D004BB411C03C71E00EB5705 /* TShape.swift */,
+				D004BB431C03C74500EB5705 /* LineShape.swift */,
+				D004BB451C03C77000EB5705 /* LShape.swift */,
+				D004BB471C03C7B500EB5705 /* JShape.swift */,
+				D004BB491C03C7D300EB5705 /* SShape.swift */,
+				D004BB4B1C03C7FC00EB5705 /* ZShape.swift */,
+				D0FE84F91BFB305300BF5CA8 /* Main.storyboard */,
+				D0FE84FC1BFB305300BF5CA8 /* Assets.xcassets */,
+				D0FE84FE1BFB305300BF5CA8 /* LaunchScreen.storyboard */,
+				D086BFE71BFC5DA70054E95E /* Sprites.atlas */,
+				D086BFD91BFC59730054E95E /* Supporting Files */,
+			);
+			path = Swiftris;
+			sourceTree = "<group>";
+		};
+		D0FE85091BFB305300BF5CA8 /* SwiftrisTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0FE850A1BFB305300BF5CA8 /* SwiftrisTests.swift */,
+				D0FE850C1BFB305300BF5CA8 /* Info.plist */,
+			);
+			path = SwiftrisTests;
+			sourceTree = "<group>";
+		};
+		D0FE85141BFB305300BF5CA8 /* SwiftrisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0FE85151BFB305300BF5CA8 /* SwiftrisUITests.swift */,
+				D0FE85171BFB305300BF5CA8 /* Info.plist */,
+			);
+			path = SwiftrisUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0FE84ED1BFB305200BF5CA8 /* Swiftris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FE851A1BFB305300BF5CA8 /* Build configuration list for PBXNativeTarget "Swiftris" */;
+			buildPhases = (
+				D0FE84EA1BFB305200BF5CA8 /* Sources */,
+				D0FE84EB1BFB305200BF5CA8 /* Frameworks */,
+				D0FE84EC1BFB305200BF5CA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Swiftris;
+			productName = Swiftris;
+			productReference = D0FE84EE1BFB305300BF5CA8 /* Swiftris.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0FE85051BFB305300BF5CA8 /* SwiftrisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FE851D1BFB305300BF5CA8 /* Build configuration list for PBXNativeTarget "SwiftrisTests" */;
+			buildPhases = (
+				D0FE85021BFB305300BF5CA8 /* Sources */,
+				D0FE85031BFB305300BF5CA8 /* Frameworks */,
+				D0FE85041BFB305300BF5CA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0FE85081BFB305300BF5CA8 /* PBXTargetDependency */,
+			);
+			name = SwiftrisTests;
+			productName = SwiftrisTests;
+			productReference = D0FE85061BFB305300BF5CA8 /* SwiftrisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0FE85101BFB305300BF5CA8 /* SwiftrisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FE85201BFB305300BF5CA8 /* Build configuration list for PBXNativeTarget "SwiftrisUITests" */;
+			buildPhases = (
+				D0FE850D1BFB305300BF5CA8 /* Sources */,
+				D0FE850E1BFB305300BF5CA8 /* Frameworks */,
+				D0FE850F1BFB305300BF5CA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0FE85131BFB305300BF5CA8 /* PBXTargetDependency */,
+			);
+			name = SwiftrisUITests;
+			productName = SwiftrisUITests;
+			productReference = D0FE85111BFB305300BF5CA8 /* SwiftrisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0FE84E61BFB305200BF5CA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Bloc;
+				TargetAttributes = {
+					D0FE84ED1BFB305200BF5CA8 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					D0FE85051BFB305300BF5CA8 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = D0FE84ED1BFB305200BF5CA8;
+					};
+					D0FE85101BFB305300BF5CA8 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = D0FE84ED1BFB305200BF5CA8;
+					};
+				};
+			};
+			buildConfigurationList = D0FE84E91BFB305200BF5CA8 /* Build configuration list for PBXProject "Swiftris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0FE84E51BFB305200BF5CA8;
+			productRefGroup = D0FE84EF1BFB305300BF5CA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0FE84ED1BFB305200BF5CA8 /* Swiftris */,
+				D0FE85051BFB305300BF5CA8 /* SwiftrisTests */,
+				D0FE85101BFB305300BF5CA8 /* SwiftrisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0FE84EC1BFB305200BF5CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D086BFE51BFC5D950054E95E /* whitebg.png in Resources */,
+				D086BFE41BFC5D950054E95E /* gameboard@2x.png in Resources */,
+				D0FE85001BFB305300BF5CA8 /* LaunchScreen.storyboard in Resources */,
+				D086BFE11BFC5D950054E95E /* background.png in Resources */,
+				D086BFE81BFC5DA70054E95E /* Sprites.atlas in Resources */,
+				D086BFE31BFC5D950054E95E /* gameboard.png in Resources */,
+				D0FE84FD1BFB305300BF5CA8 /* Assets.xcassets in Resources */,
+				D086BFE21BFC5D950054E95E /* background@2x.png in Resources */,
+				D086BFE61BFC5D950054E95E /* whitebg@2x.png in Resources */,
+				D0FE84FB1BFB305300BF5CA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FE85041BFB305300BF5CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FE850F1BFB305300BF5CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0FE84EA1BFB305200BF5CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D004BB461C03C77000EB5705 /* LShape.swift in Sources */,
+				D004BB401C03C6B500EB5705 /* SquareShape.swift in Sources */,
+				D04A992E1BFEB2CB00E11A7D /* Block.swift in Sources */,
+				D004BB481C03C7B500EB5705 /* JShape.swift in Sources */,
+				D004BB4E1C03CD3400EB5705 /* Swiftris.swift in Sources */,
+				D004BB3E1C03C46100EB5705 /* Shape.swift in Sources */,
+				D0FE84F61BFB305300BF5CA8 /* GameScene.swift in Sources */,
+				D004BB441C03C74500EB5705 /* LineShape.swift in Sources */,
+				D004BB4A1C03C7D300EB5705 /* SShape.swift in Sources */,
+				D004BB421C03C71E00EB5705 /* TShape.swift in Sources */,
+				D086BFEA1BFC63040054E95E /* Array2D.swift in Sources */,
+				D0FE84F81BFB305300BF5CA8 /* GameViewController.swift in Sources */,
+				D004BB4C1C03C7FC00EB5705 /* ZShape.swift in Sources */,
+				D0FE84F21BFB305300BF5CA8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FE85021BFB305300BF5CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FE850B1BFB305300BF5CA8 /* SwiftrisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FE850D1BFB305300BF5CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FE85161BFB305300BF5CA8 /* SwiftrisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0FE85081BFB305300BF5CA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0FE84ED1BFB305200BF5CA8 /* Swiftris */;
+			targetProxy = D0FE85071BFB305300BF5CA8 /* PBXContainerItemProxy */;
+		};
+		D0FE85131BFB305300BF5CA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0FE84ED1BFB305200BF5CA8 /* Swiftris */;
+			targetProxy = D0FE85121BFB305300BF5CA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0FE84F91BFB305300BF5CA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0FE84FA1BFB305300BF5CA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0FE84FE1BFB305300BF5CA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0FE84FF1BFB305300BF5CA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0FE85181BFB305300BF5CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0FE85191BFB305300BF5CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0FE851B1BFB305300BF5CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Swiftris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.Swiftris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D0FE851C1BFB305300BF5CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Swiftris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.Swiftris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D0FE851E1BFB305300BF5CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SwiftrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.SwiftrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiftris.app/Swiftris";
+			};
+			name = Debug;
+		};
+		D0FE851F1BFB305300BF5CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwiftrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.SwiftrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiftris.app/Swiftris";
+			};
+			name = Release;
+		};
+		D0FE85211BFB305300BF5CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SwiftrisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.SwiftrisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Swiftris;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D0FE85221BFB305300BF5CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftrisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.SwiftrisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Swiftris;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0FE84E91BFB305200BF5CA8 /* Build configuration list for PBXProject "Swiftris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE85181BFB305300BF5CA8 /* Debug */,
+				D0FE85191BFB305300BF5CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FE851A1BFB305300BF5CA8 /* Build configuration list for PBXNativeTarget "Swiftris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE851B1BFB305300BF5CA8 /* Debug */,
+				D0FE851C1BFB305300BF5CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FE851D1BFB305300BF5CA8 /* Build configuration list for PBXNativeTarget "SwiftrisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE851E1BFB305300BF5CA8 /* Debug */,
+				D0FE851F1BFB305300BF5CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FE85201BFB305300BF5CA8 /* Build configuration list for PBXNativeTarget "SwiftrisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE85211BFB305300BF5CA8 /* Debug */,
+				D0FE85221BFB305300BF5CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0FE84E61BFB305200BF5CA8 /* Project object */;
+}
