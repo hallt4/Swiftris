@@ -35,7 +35,9 @@ import SpriteKit
         self.view.addGestureRecognizer(panGestureRecognizer)
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("didSwipe:"))
+        
         swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Down
+        
         self.view.addGestureRecognizer(swipeGestureRecognizer)
         
         
@@ -124,6 +126,11 @@ import SpriteKit
     }
     
     func gameDidBegin(swiftris: Swiftris) {
+        
+        levelLabel.text = "\(swiftris.level)"
+        scoreLabel.text = "\(swiftris.score)"
+        scene.tickLengthMillis = TickLengthLevelOne
+
         // The following is false when restarting a new game
         if swiftris.nextShape != nil && swiftris.nextShape!.blocks[0].sprite == nil {
             scene.addPreviewShapeToScene(swiftris.nextShape!) {
@@ -137,6 +144,12 @@ import SpriteKit
     func gameDidEnd(swiftris: Swiftris) {
         view.userInteractionEnabled = false
         scene.stopTicking()
+        
+        scene.playSound("gameover.mp3")
+        scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: Array<Array<Block>>()) {
+            swiftris.beginGame()
+        }
+
     }
     
     func gameDidLevelUp(swiftris: Swiftris) {
@@ -153,7 +166,20 @@ import SpriteKit
     
     func gameShapeDidLand(swiftris: Swiftris) {
         scene.stopTicking()
-        nextShape()
+        
+        self.view.userInteractionEnabled = false
+        // #10
+        let removedLines = swiftris.removeCompletedLines()
+        if removedLines.linesRemoved.count > 0 {
+            self.scoreLabel.text = "\(swiftris.score)"
+            scene.animateCollapsingLines(removedLines.linesRemoved, fallenBlocks:removedLines.fallenBlocks) {
+                // #11
+                self.gameShapeDidLand(swiftris)
+            }
+            scene.playSound("bomb.mp3")
+        } else {
+            nextShape()
+        }
     }
     
     // #17

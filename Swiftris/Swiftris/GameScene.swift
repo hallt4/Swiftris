@@ -49,6 +49,12 @@ class GameScene: SKScene {
         shapeLayer.position = LayerPosition
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
+        
+        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("theme.mp3", waitForCompletion: true)))
+    }
+    
+    func playSound(sound:String) {
+        runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
     }
     
     
@@ -152,7 +158,7 @@ class GameScene: SKScene {
                 longestDuration = max(longestDuration, duration + delay)
             }
         }
-        //Changed from enumerate(linesToRemove for Swift 2.0?
+        //Changed from enumerate(linesToRemove) for Swift 2.0?
         for (rowIdx, row) in linesToRemove.enumerate() {
             for (blockIdx, block) in row.enumerate() {
                 // #4
