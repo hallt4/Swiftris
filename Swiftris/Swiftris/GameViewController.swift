@@ -48,6 +48,8 @@ import SpriteKit
         
         scene.tick = didTick
         
+        scene.timedGame()
+        
         swiftris = Swiftris()
         
         swiftris.delegate = self
@@ -110,6 +112,14 @@ import SpriteKit
     
     func didTick() {
         swiftris.letShapeFall()
+        
+        if swiftris.mode == .timed {
+            
+        
+        if scene.timedGame() {
+            swiftris.endGame()
+        }
+        }
     }
     
     func nextShape() {
@@ -147,7 +157,7 @@ import SpriteKit
         
         scene.playSound("gameover.mp3")
         scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: Array<Array<Block>>()) {
-            swiftris.beginGame()
+            //swiftris.beginGame()
         }
 
     }

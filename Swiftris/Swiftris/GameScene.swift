@@ -14,6 +14,9 @@ let BlockSize:CGFloat = 20.0
 let TickLengthLevelOne = NSTimeInterval(600)
 
 class GameScene: SKScene {
+    
+
+    
     // #8
     let gameLayer = SKNode()
     let shapeLayer = SKNode()
@@ -22,6 +25,7 @@ class GameScene: SKScene {
     var tick:(() -> ())?
     var tickLengthMillis = TickLengthLevelOne
     var lastTick:NSDate?
+    var startTime:NSDate? = NSDate()
     
     var textureCache = Dictionary<String, SKTexture>()
     
@@ -61,6 +65,7 @@ class GameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
         guard let lastTick = lastTick else {
             return
         }
@@ -73,11 +78,26 @@ class GameScene: SKScene {
     
     func startTicking() {
         lastTick = NSDate()
+        
+        
+        
     }
     
     func stopTicking() {
         lastTick = nil
     }
+    
+    func timedGame() -> Bool{
+            if let lastTick = lastTick {
+            if lastTick.timeIntervalSinceDate(self.startTime!) >= 10 {
+              return true
+                
+            }
+            }
+                return false
+    }
+
+    
     
     // #9
     func pointForColumn(column: Int, row: Int) -> CGPoint {

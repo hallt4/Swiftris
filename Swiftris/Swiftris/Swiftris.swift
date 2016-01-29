@@ -40,6 +40,12 @@ protocol SwiftrisDelegate {
 }
 
 
+enum Mode {
+    case classic
+    case timed
+}
+
+
 
 class Swiftris {
     var blockArray:Array2D<Block>
@@ -49,6 +55,9 @@ class Swiftris {
     
     var score = 0
     var level = 1
+    
+    var mode: Mode = .classic
+    
 
 
     
@@ -59,6 +68,9 @@ class Swiftris {
     }
     
     func beginGame() {
+        
+        
+        
         if (nextShape == nil) {
             nextShape = Shape.random(PreviewColumn, startingRow: PreviewRow)
         }
@@ -120,6 +132,7 @@ class Swiftris {
         }
         return false
     }
+    
     
     func endGame() {
         score = 0
