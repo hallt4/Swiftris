@@ -5,12 +5,12 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "AA71D82732A772EA4D2DD325511231DB4D900A6D" : 0,
-    "0B865AB1B54F8508EEEB5BF4D9C78CA855392D89" : 0
+    "35D428CD6C73D9316CC06C44871EE82AD98356A6" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "56551257-728F-44FE-BB5E-F8ACAC8822DB",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "AA71D82732A772EA4D2DD325511231DB4D900A6D" : "Swiftris\/",
-    "0B865AB1B54F8508EEEB5BF4D9C78CA855392D89" : ".."
+    "35D428CD6C73D9316CC06C44871EE82AD98356A6" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Swiftris",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,7 +19,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:hallt4\/Bloctsagram.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B865AB1B54F8508EEEB5BF4D9C78CA855392D89"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "35D428CD6C73D9316CC06C44871EE82AD98356A6"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:hallt4\/Swiftris.git",
