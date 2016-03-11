@@ -8,8 +8,9 @@
 
 import UIKit
 import SpriteKit
+import GameKit
 
-  class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate {
+class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate, GKGameCenterControllerDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
@@ -58,15 +59,63 @@ import SpriteKit
         
         skView.presentScene(scene)
         
-    
+        
         //deleted overide from next line to resolve error during initial delete. may need later
         func prefersStatusBarHidden() -> Bool {
-        return true
+            return true
+        }
+        
+        authenticateLocalPlayer()
+        
+    }
+    
+    func authenticateLocalPlayer(){
+        let localPlayer = GKLocalPlayer.localPlayer()
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            guard let viewController = viewController else {
+                print("(GameCenter) Player authenticated: \(GKLocalPlayer.localPlayer().authenticated)")
+                
+                return
+            }
+            
+            self.presentViewController(viewController, animated: true, completion: nil)
+            
+            
         }
     }
     
+    func saveHighscore (score: Int64) {
+        if GKLocalPlayer.localPlayer().authenticated {
+            let gkScore = GKScore(leaderboardIdentifier: "SwiftrisLeaderboard123")
+            gkScore.value = score
+            GKScore.reportScores([gkScore], withCompletionHandler: ( { (error: NSError?) -> Void in
+                if let error = error {
+                    // handle error
+                    print("Error: " + error.localizedDescription);
+                } else {
+                    print("Score reported: \(gkScore.value)")
+                }
+            }))
+        }
+
+    }
+    
+    func showLeader() {
+        let vc = self.view?.window?.rootViewController
+        let gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        vc?.presentViewController(gc, animated: true, completion: nil)
+    }
+    
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController)
+    {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
     func didTap(sender: UITapGestureRecognizer) {
-            swiftris.rotateShape()
+        swiftris.rotateShape()
     }
     
     func didPan(sender: UIPanGestureRecognizer) {
@@ -89,7 +138,7 @@ import SpriteKit
     }
     
     func didSwipe(sender: UISwipeGestureRecognizer) {
-            swiftris.dropShape()
+        swiftris.dropShape()
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -115,10 +164,10 @@ import SpriteKit
         
         if swiftris.mode == .timed {
             
-        
-        if scene.timedGame() {
-            swiftris.endGame()
-        }
+            
+            if scene.timedGame() {
+                swiftris.endGame()
+            }
         }
     }
     
@@ -140,7 +189,7 @@ import SpriteKit
         levelLabel.text = "\(swiftris.level)"
         scoreLabel.text = "\(swiftris.score)"
         scene.tickLengthMillis = TickLengthLevelOne
-
+        
         // The following is false when restarting a new game
         if swiftris.nextShape != nil && swiftris.nextShape!.blocks[0].sprite == nil {
             scene.addPreviewShapeToScene(swiftris.nextShape!) {
@@ -159,7 +208,11 @@ import SpriteKit
         scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: Array<Array<Block>>()) {
             //swiftris.beginGame()
         }
-
+        saveHighscore(swiftris.score)
+        showLeader()
+   
+        
+        
     }
     
     func gameDidLevelUp(swiftris: Swiftris) {
@@ -196,7 +249,7 @@ import SpriteKit
     func gameShapeDidMove(swiftris: Swiftris) {
         scene.redrawShape(swiftris.fallingShape!) {}
     }
-
-
+    
+    
     
 }

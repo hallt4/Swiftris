@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+      
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.000581">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000454">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: produce" time="4.503434">
+        
+          <failure message="/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/actions/actions_helper.rb:33:in `execute_action'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:129:in `block in execute_action'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:128:in `chdir'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:128:in `execute_action'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/fast_file.rb:149:in `method_missing'&#10;Fastfile:13:in `block (2 levels) in parsing_binding'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/lane.rb:36:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/lane.rb:36:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:52:in `block in execute'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:46:in `chdir'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:46:in `execute'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/lane_manager.rb:46:in `cruise_lane'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/command_line_handler.rb:30:in `handle'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/bin/fastlane:38:in `block (2 levels) in run'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/command.rb:178:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/command.rb:178:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/command.rb:153:in `run'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/runner.rb:428:in `run_active_command'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane_core-0.37.0/lib/fastlane_core/ui/fastlane_runner.rb:23:in `run!'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/delegates.rb:15:in `run!'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/bin/fastlane:156:in `run'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/bin/fastlane:162:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:23:in `load'&#10;/usr/local/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;{&quot;responseId&quot;=&gt;&quot;b706c795-7660-4fe3-b024-89fde3f0a060&quot;, &quot;resultCode&quot;=&gt;9401, &quot;resultString&quot;=&gt;&quot;An App ID with Identifier &amp;#x27;Bloc.io.Swiftris&amp;#x27; is not available. Please enter a different string.&quot;, &quot;userString&quot;=&gt;&quot;An App ID with Identifier &amp;#x27;Bloc.io.Swiftris&amp;#x27; is not available. Please enter a different string.&quot;, &quot;creationTimestamp&quot;=&gt;&quot;2016-03-11T00:53:54Z&quot;, &quot;protocolVersion&quot;=&gt;&quot;QH65B2&quot;, &quot;userLocale&quot;=&gt;&quot;en_US&quot;, &quot;requestUrl&quot;=&gt;&quot;https://developer.apple.com/services-account/QH65B2/account/ios/identifiers/addAppId.action&quot;, &quot;httpCode&quot;=&gt;200}" />
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

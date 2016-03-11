@@ -5,6 +5,9 @@
 //  Created by Tyler Hall on 11/23/15.
 //  Copyright © 2015 Bloc. All rights reserved.
 //
+
+import GameKit
+
 let NumColumns = 10
 let NumRows = 20
 
@@ -53,8 +56,8 @@ class Swiftris {
     var fallingShape:Shape?
     var delegate:SwiftrisDelegate?
     
-    var score = 0
-    var level = 1
+    var score: Int64 = 0
+    var level: Int64 = 1
     
     var mode: Mode = .classic
     
@@ -137,7 +140,10 @@ class Swiftris {
     func endGame() {
         score = 0
         level = 1
+        
         delegate?.gameDidEnd(self)
+        
+        
     }
     
     func removeCompletedLines() -> (linesRemoved: Array<Array<Block>>, fallenBlocks: Array<Array<Block>>) {
@@ -164,9 +170,9 @@ class Swiftris {
             return ([], [])
         }
         // #13
-        let pointsEarned = removedLines.count * PointsPerLine * level
+        let pointsEarned = removedLines.count * PointsPerLine * Int(level)
         score += pointsEarned
-        if score >= level * LevelThreshold {
+        if Int(score) >= Int(level) * LevelThreshold {
             level += 1
             delegate?.gameDidLevelUp(self)
         }
@@ -240,7 +246,7 @@ class Swiftris {
         delegate?.gameShapeDidMove(self)
     }
     
-    // #7
+    
     func moveShapeLeft() {
         guard let shape = fallingShape else {
             return

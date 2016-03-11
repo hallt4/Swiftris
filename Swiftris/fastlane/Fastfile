@@ -1,0 +1,29 @@
+# Minimum version of fastlane
+fastlane_version "1.32.1"
+ 
+default_platform :ios
+ 
+platform :ios do
+ 
+  # 1 
+  desc "Creating a code signing certificate and provisioning profile"
+  # 2
+  lane :provision do
+    # 3 
+    produce(
+      app_name: 'SWIFTRIS_TYLER_HALL',
+      language: 'English',
+      app_version: '1.0',
+      sku: '123abc'
+    )
+    # 4
+    cert
+    # 5
+    sigh(force: true)
+  end
+ 
+  error do |lane, exception|
+    # This block is called, if there was an error running a specific lane.
+  end
+ 
+end
