@@ -40,6 +40,8 @@ protocol SwiftrisDelegate {
     
     // Invoked when the game has reached a new level
     func gameDidLevelUp(swiftris: Swiftris)
+    
+    
 }
 
 
@@ -138,8 +140,8 @@ class Swiftris {
     
     
     func endGame() {
-        score = 0
-        level = 1
+        
+        
         
         delegate?.gameDidEnd(self)
         

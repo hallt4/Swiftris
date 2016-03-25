@@ -68,7 +68,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         authenticateLocalPlayer()
         
     }
-    
+
+
     func authenticateLocalPlayer(){
         let localPlayer = GKLocalPlayer.localPlayer()
         localPlayer.authenticateHandler = {(viewController, error) -> Void in
@@ -203,12 +204,16 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     func gameDidEnd(swiftris: Swiftris) {
         view.userInteractionEnabled = false
         scene.stopTicking()
+        saveHighscore(swiftris.score)
+        
+        swiftris.score = 0
+        swiftris.level = 1
         
         scene.playSound("gameover.mp3")
         scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: Array<Array<Block>>()) {
             //swiftris.beginGame()
         }
-        saveHighscore(swiftris.score)
+        
         showLeader()
    
         
