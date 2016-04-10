@@ -20,6 +20,8 @@ let PreviewRow = 1
 let PointsPerLine = 10
 let LevelThreshold = 1000
 
+var firstLineCompleted = false
+
 
 
 protocol SwiftrisDelegate {
@@ -40,6 +42,8 @@ protocol SwiftrisDelegate {
     
     // Invoked when the game has reached a new level
     func gameDidLevelUp(swiftris: Swiftris)
+    
+    func saveAchivement(achievement: GKAchievement)
     
     
 }
@@ -63,8 +67,8 @@ class Swiftris {
     
     var mode: Mode = .classic
     
-
-
+    
+    
     
     init() {
         fallingShape = nil
@@ -105,7 +109,7 @@ class Swiftris {
         for block in shape.blocks {
             if block.column < 0 || block.column >= NumColumns
                 || block.row < 0 || block.row >= NumRows {
-                    return true
+                return true
             } else if blockArray[block.column, block.row] != nil {
                 return true
             }
@@ -132,7 +136,7 @@ class Swiftris {
         for bottomBlock in shape.bottomBlocks {
             if bottomBlock.row == NumRows - 1
                 || blockArray[bottomBlock.column, bottomBlock.row + 1] != nil {
-                    return true
+                return true
             }
         }
         return false
@@ -149,6 +153,9 @@ class Swiftris {
     }
     
     func removeCompletedLines() -> (linesRemoved: Array<Array<Block>>, fallenBlocks: Array<Array<Block>>) {
+        
+        
+        
         var removedLines = Array<Array<Block>>()
         for var row = NumRows - 1; row > 0; row-- {
             var rowOfBlocks = Array<Block>()
@@ -172,12 +179,23 @@ class Swiftris {
             return ([], [])
         }
         // #13
+        
+        
+        
         let pointsEarned = removedLines.count * PointsPerLine * Int(level)
         score += pointsEarned
         if Int(score) >= Int(level) * LevelThreshold {
             level += 1
             delegate?.gameDidLevelUp(self)
         }
+        
+        
+        if firstLineCompleted == false
+        {
+            delegate?.saveAchivement(GKAchievement.init(identifier: "BeginnersLuck"))
+            firstLineCompleted = true
+        }
+        
         
         var fallenBlocks = Array<Array<Block>>()
         for column in 0..<NumColumns {
