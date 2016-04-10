@@ -44,7 +44,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         
         
         //create/config the scene
-        scene = GameScene(size: skView.bounds.size)
+        scene = GameScene(size: UIScreen.mainScreen().bounds.size)
         scene.scaleMode = .AspectFill
         
         scene.tick = didTick
@@ -68,7 +68,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         authenticateLocalPlayer()
         
     }
-
+    
+    
 
     func authenticateLocalPlayer(){
         let localPlayer = GKLocalPlayer.localPlayer()
@@ -99,6 +100,13 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
             }))
         }
 
+    }
+    
+    func saveAchivement(achievement: GKAchievement){
+        achievement.percentComplete = 100
+        achievement.showsCompletionBanner = true
+        GKAchievement.reportAchievements([achievement], withCompletionHandler: nil)
+        
     }
     
     func showLeader() {
