@@ -24,8 +24,11 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         super.viewDidLoad()
         
         //config the view
-        let skView = self.view as! SKView
+        // Configure the view.
+        let skView = view as! SKView
         skView.multipleTouchEnabled = false
+        skView.accessibilityTraits = UIAccessibilityTraitAllowsDirectInteraction
+        skView.isAccessibilityElement = false
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("didTap:"))
         
@@ -66,6 +69,20 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         }
         
         authenticateLocalPlayer()
+        
+        if scoreLabel.isAccessibilityElement {
+            scoreLabel.accessibilityTraits = UIAccessibilityTraitUpdatesFrequently
+            
+            scoreLabel.accessibilityHint = "This label displeys your score"
+            
+        }
+        
+        if levelLabel.isAccessibilityElement {
+            levelLabel.accessibilityTraits = UIAccessibilityTraitNone
+
+            
+            levelLabel.accessibilityHint = "This label displays your level"
+        }
         
     }
     
@@ -197,6 +214,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         
         levelLabel.text = "\(swiftris.level)"
         scoreLabel.text = "\(swiftris.score)"
+        scoreLabel.accessibilityLabel = scoreLabel.text
+        levelLabel.accessibilityLabel = levelLabel.text
         scene.tickLengthMillis = TickLengthLevelOne
         
         // The following is false when restarting a new game
@@ -248,6 +267,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         let removedLines = swiftris.removeCompletedLines()
         if removedLines.linesRemoved.count > 0 {
             self.scoreLabel.text = "\(swiftris.score)"
+            scoreLabel.accessibilityLabel = scoreLabel.text
+            levelLabel.accessibilityLabel = levelLabel.text
             scene.animateCollapsingLines(removedLines.linesRemoved, fallenBlocks:removedLines.fallenBlocks) {
                 // #11
                 self.gameShapeDidLand(swiftris)
