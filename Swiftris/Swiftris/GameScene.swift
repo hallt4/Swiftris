@@ -20,7 +20,7 @@ class GameScene: SKScene {
     // #8
     let gameLayer = SKNode()
     let shapeLayer = SKNode()
-    let LayerPosition = CGPoint(x: 6, y: -6)
+    let LayerPosition = CGPoint(x: 6, y: -25)
     
     var tick:(() -> ())?
     var tickLengthMillis = TickLengthLevelOne
@@ -41,6 +41,7 @@ class GameScene: SKScene {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 0, y: 0)
         background.anchorPoint = CGPoint(x: 0, y: 1.0)
+        background.size = UIScreen.mainScreen().nativeBounds.size
         addChild(background)
         
         addChild(gameLayer)

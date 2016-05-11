@@ -30,6 +30,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         skView.accessibilityTraits = UIAccessibilityTraitAllowsDirectInteraction
         skView.isAccessibilityElement = false
         
+        
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("didTap:"))
         
         self.view.addGestureRecognizer(tapGestureRecognizer)
@@ -47,8 +49,9 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         
         
         //create/config the scene
-        scene = GameScene(size: UIScreen.mainScreen().bounds.size)
-        scene.scaleMode = .AspectFill
+        scene = GameScene(size: self.view.frame.size)
+        scene.scaleMode = .ResizeFill
+        
         
         scene.tick = didTick
         

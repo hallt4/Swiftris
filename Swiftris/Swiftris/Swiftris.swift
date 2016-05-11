@@ -8,13 +8,15 @@
 
 import GameKit
 
-let NumColumns = 10
-let NumRows = 20
 
+
+
+let NumColumns = Int((UIScreen.mainScreen().bounds.width - 130) / 20)
+let NumRows = Int((UIScreen.mainScreen().bounds.height - 60) / 20)
 let StartingColumn = 4
 let StartingRow = 0
 
-let PreviewColumn = 12
+let PreviewColumn = 14
 let PreviewRow = 1
 
 let PointsPerLine = 10
