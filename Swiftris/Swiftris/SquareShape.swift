@@ -37,4 +37,8 @@ class SquareShape:Shape {
             Orientation.TwoSeventy: [blocks[ThirdBlockIdx], blocks[FourthBlockIdx]]
         ]
     }
+    
+    override func verbalDescription() -> String {
+        return "Square shape"
+    }
 }

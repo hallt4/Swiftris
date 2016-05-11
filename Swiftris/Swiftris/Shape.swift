@@ -104,17 +104,20 @@ class Shape: Hashable, CustomStringConvertible {
     convenience init(column:Int, row:Int) {
         self.init(column:column, row:row, color:BlockColor.random(), orientation:Orientation.random())
     }
-
-
-final func initializeBlocks() {
-    guard let blockRowColumnTranslations = blockRowColumnPositions[orientation] else {
-        return
+    
+    func verbalDescription() -> String {
+        return ""
     }
-    // #8
-    blocks = blockRowColumnTranslations.map { (diff) -> Block in
-        return Block(column: column + diff.columnDiff, row: row + diff.rowDiff, color: color)
+    
+    final func initializeBlocks() {
+        guard let blockRowColumnTranslations = blockRowColumnPositions[orientation] else {
+            return
+        }
+        // #8
+        blocks = blockRowColumnTranslations.map { (diff) -> Block in
+            return Block(column: column + diff.columnDiff, row: row + diff.rowDiff, color: color)
+        }
     }
-}
     final func rotateBlocks(orientation: Orientation) {
         guard let blockRowColumnTranslation:Array<(columnDiff: Int, rowDiff: Int)> = blockRowColumnPositions[orientation] else {
             return
@@ -137,7 +140,7 @@ final func initializeBlocks() {
         rotateBlocks(newOrientation)
         orientation = newOrientation
     }
-
+    
     
     final func lowerShapeByOneRow() {
         shiftBy(0, rows:1)
@@ -174,7 +177,7 @@ final func initializeBlocks() {
     
     final class func random(startingColumn:Int, startingRow:Int) -> Shape {
         switch Int(arc4random_uniform(NumShapeTypes)) {
-            // #4
+        // #4
         case 0:
             return SquareShape(column:startingColumn, row:startingRow)
         case 1:

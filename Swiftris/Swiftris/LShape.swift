@@ -55,4 +55,7 @@ class LShape:Shape {
             Orientation.TwoSeventy: [blocks[FirstBlockIdx], blocks[SecondBlockIdx], blocks[ThirdBlockIdx]]
         ]
     }
+    override func verbalDescription() -> String {
+        return "El shape"
+    }
 }
