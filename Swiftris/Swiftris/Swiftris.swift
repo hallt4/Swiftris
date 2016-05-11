@@ -100,8 +100,12 @@ class Swiftris {
         guard let fallingShape = fallingShape else { return (nil, nil) }
         
         fallingShape.moveTo(StartingColumn, row: StartingRow)
-        self.announceString(fallingShape.verbalDescription())
+        
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 1 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
             
+        self.announceString(fallingShape.verbalDescription())
+        }
         
         guard detectIllegalPlacement() == false else {
             nextShape = fallingShape
@@ -183,7 +187,7 @@ class Swiftris {
         
         
         var removedLines = Array<Array<Block>>()
-        for var row = NumRows - 1; row > 0; row -- 1 {
+        for var row = NumRows - 1; row > 0; row -= 1 {
             var rowOfBlocks = Array<Block>()
             // #11
             for column in 0..<NumColumns {
