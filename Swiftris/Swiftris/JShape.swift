@@ -54,4 +54,8 @@ class JShape:Shape {
             Orientation.TwoSeventy: [blocks[FirstBlockIdx], blocks[SecondBlockIdx], blocks[FourthBlockIdx]]
         ]
     }
+    
+    override func verbalDescription() -> String {
+        return "Jay shape"
+    }
 }

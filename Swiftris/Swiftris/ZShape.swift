@@ -53,4 +53,8 @@ class ZShape:Shape {
             Orientation.TwoSeventy: [blocks[FirstBlockIdx], blocks[ThirdBlockIdx], blocks[FourthBlockIdx]]
         ]
     }
+    
+    override func verbalDescription() -> String {
+        return "Zee shape"
+    }
 }

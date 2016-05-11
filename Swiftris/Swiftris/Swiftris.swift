@@ -18,7 +18,7 @@ let PreviewColumn = 12
 let PreviewRow = 1
 
 let PointsPerLine = 10
-let LevelThreshold = 1000
+let LevelThreshold = 100
 
 var firstLineCompleted = false
 
@@ -86,11 +86,22 @@ class Swiftris {
         delegate?.gameDidBegin(self)
     }
     
+    func announceString(event:String) {
+        if UIAccessibilityIsVoiceOverRunning(){
+            UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, event)
+        }
+
+    }
+    
     // #6
     func newShape() -> (fallingShape:Shape?, nextShape:Shape?) {
         fallingShape = nextShape
         nextShape = Shape.random(PreviewColumn, startingRow: PreviewRow)
-        fallingShape?.moveTo(StartingColumn, row: StartingRow)
+        guard let fallingShape = fallingShape else { return (nil, nil) }
+        
+        fallingShape.moveTo(StartingColumn, row: StartingRow)
+        self.announceString(fallingShape.verbalDescription())
+            
         
         guard detectIllegalPlacement() == false else {
             nextShape = fallingShape
@@ -100,6 +111,17 @@ class Swiftris {
         }
         
         return (fallingShape, nextShape)
+    }
+    
+    func detectHorizontalExtent(){
+        guard let shape = fallingShape else {
+            return
+        }
+        for block in shape.blocks {
+            if block.column == 1 || block.column == NumColumns {
+                self.announceString("Horizontal extent reached")
+            }
+        }
     }
     
     func detectIllegalPlacement() -> Bool {
@@ -126,6 +148,10 @@ class Swiftris {
         }
         fallingShape = nil
         delegate?.gameShapeDidLand(self)
+        
+        self.announceString("Shape landed")
+        
+        
     }
     
     // #9
@@ -157,7 +183,7 @@ class Swiftris {
         
         
         var removedLines = Array<Array<Block>>()
-        for var row = NumRows - 1; row > 0; row-- {
+        for var row = NumRows - 1; row > 0; row -- 1 {
             var rowOfBlocks = Array<Block>()
             // #11
             for column in 0..<NumColumns {
@@ -180,7 +206,7 @@ class Swiftris {
         }
         // #13
         
-        
+        announceString("Row destroyed")
         
         let pointsEarned = removedLines.count * PointsPerLine * Int(level)
         score += pointsEarned
@@ -259,6 +285,7 @@ class Swiftris {
             return
         }
         shape.rotateClockwise()
+        detectHorizontalExtent()
         guard detectIllegalPlacement() == false else {
             shape.rotateCounterClockwise()
             return
@@ -271,7 +298,10 @@ class Swiftris {
         guard let shape = fallingShape else {
             return
         }
+        
+        
         shape.shiftLeftByOneColumn()
+        detectHorizontalExtent()
         guard detectIllegalPlacement() == false else {
             shape.shiftRightByOneColumn()
             return
@@ -284,6 +314,7 @@ class Swiftris {
             return
         }
         shape.shiftRightByOneColumn()
+        detectHorizontalExtent()
         guard detectIllegalPlacement() == false else {
             shape.shiftLeftByOneColumn()
             return

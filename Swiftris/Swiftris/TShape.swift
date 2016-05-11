@@ -52,4 +52,8 @@ class TShape:Shape {
             Orientation.TwoSeventy: [blocks[FirstBlockIdx], blocks[FourthBlockIdx]]
         ]
     }
+    
+    override func verbalDescription() -> String {
+        return "Tee shape"
+    }
 }
